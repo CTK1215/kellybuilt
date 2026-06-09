@@ -36,6 +36,16 @@ html {
   color-scheme: dark;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
