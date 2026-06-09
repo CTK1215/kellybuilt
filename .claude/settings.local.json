@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx astro *)",
+      "Bash(mkdir -p components layouts content assets styles)",
+      "Bash(touch components/.gitkeep content/.gitkeep assets/.gitkeep)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /tmp/portfolio-page.html -w \"HTTP %{http_code}\\\\n\" http://localhost:4321/)",
+      "Read(//tmp/**)",
+      "Bash(git config *)",
+      "Bash(git add *)"
+    ]
+  }
+}
