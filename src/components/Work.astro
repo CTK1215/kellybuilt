@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const featured = projects.find((p) => p.data.featured);
+const rest = projects.filter((p) => p !== featured);
+---
+
+<section
+  id="work"
+  aria-labelledby="work-heading"
+  class="py-20 sm:py-24 lg:py-28"
+>
+  <header class="mb-12 sm:mb-14">
+    <h2
+      id="work-heading"
+      class="text-3xl font-semibold tracking-tight text-text sm:text-4xl"
+    >
+      Selected Work
+    </h2>
+    <p class="mt-3 text-base text-text-muted sm:text-lg">
+      Real, working software — built and shipped.
+    </p>
+  </header>
+
+  {featured && <ProjectCard project={featured} featured />}
+
+  {
+    rest.length > 0 && (
+      <div
+        class:list={[
+          "grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:gap-8",
+          featured && "mt-6 md:mt-7 lg:mt-8",
+        ]}
+      >
+        {rest.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    )
+  }
+</section>
