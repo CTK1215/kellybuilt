@@ -1,0 +1,83 @@
+---
+const groups: { label: string; items: string[] }[] = [
+  {
+    label: "Languages",
+    items: ["C#", "TypeScript", "JavaScript", "SQL", "HTML", "CSS"],
+  },
+  {
+    label: "Frameworks & Runtime",
+    items: [
+      "ASP.NET Core / .NET 8",
+      "EF Core",
+      "React",
+      "React Native",
+      "Expo",
+      "Next.js",
+      "Astro",
+      "Node.js",
+    ],
+  },
+  {
+    label: "Cloud & Data",
+    items: [
+      "Azure App Service",
+      "Azure Blob Storage",
+      "MySQL",
+      "Firebase",
+      "Vercel",
+      "REST APIs",
+      "OpenAPI",
+    ],
+  },
+  {
+    label: "Tools & Practices",
+    items: [
+      "Git & GitHub",
+      "GitHub Actions / CI",
+      "Tailwind CSS",
+      "JWT Auth",
+      "Google Maps Platform",
+      "Twilio",
+      "HubSpot API",
+      "Claude API",
+    ],
+  },
+];
+---
+
+<section
+  id="skills"
+  aria-labelledby="skills-heading"
+  class="py-20 sm:py-24 lg:py-28"
+>
+  <header class="mb-12 sm:mb-14">
+    <h2
+      id="skills-heading"
+      class="text-3xl font-semibold tracking-tight text-text sm:text-4xl"
+    >
+      Skills &amp; Tech
+    </h2>
+    <p class="mt-3 text-base text-text-muted sm:text-lg">
+      The stack I build with — used in the shipped projects above.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:gap-8">
+    {
+      groups.map((group) => (
+        <div class="rounded-xl border border-border bg-surface p-6 sm:p-7">
+          <h3 class="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+            {group.label}
+          </h3>
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label={group.label}>
+            {group.items.map((item) => (
+              <li class="rounded-md border border-border bg-bg/40 px-2.5 py-1 font-mono text-xs text-text-muted sm:text-sm">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

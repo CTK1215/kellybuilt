@@ -1,0 +1,74 @@
+---
+const email = "ctkelly1277@gmail.com";
+const githubUrl = "https://github.com/CTK1215";
+const linkedinUrl = "https://www.linkedin.com/in/christopher-kelly-dev";
+const resumeUrl = "/resume.pdf";
+const year = new Date().getFullYear();
+
+const navLinks = [
+  { href: "/#work", label: "Work" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
+];
+
+const externalLinks = [
+  { href: `mailto:${email}`, label: "Email", external: false },
+  { href: githubUrl, label: "GitHub", external: true },
+  { href: linkedinUrl, label: "LinkedIn", external: true },
+  { href: resumeUrl, label: "Resume", external: false, download: true },
+];
+---
+
+<footer class="border-t border-border">
+  <div
+    class="mx-auto flex w-full max-w-[72rem] flex-col gap-8 px-6 py-12 sm:px-8 sm:py-14 lg:flex-row lg:items-center lg:justify-between lg:px-12"
+  >
+    <div>
+      <a
+        href="/"
+        class="focus-ring rounded-sm font-mono text-base font-medium tracking-tight text-text transition-colors duration-150 hover:text-accent"
+      >
+        <span>chris</span><span class="text-accent">.</span>
+      </a>
+      <p class="mt-3 text-sm text-text-muted">
+        &copy; {year} Christopher Kelly. Built with Astro &amp; Tailwind.
+      </p>
+    </div>
+
+    <nav aria-label="Footer" class="flex flex-col gap-6 sm:flex-row sm:gap-10">
+      <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="focus-ring rounded-sm text-sm text-text-muted transition-colors duration-150 hover:text-text"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        {
+          externalLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                download={link.download ? true : undefined}
+                class="focus-ring rounded-sm text-sm text-text-muted transition-colors duration-150 hover:text-text"
+              >
+                {link.label}
+                {link.external && <span aria-hidden="true"> ↗</span>}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</footer>

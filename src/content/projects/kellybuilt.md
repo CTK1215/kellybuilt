@@ -7,6 +7,7 @@ statusKind: "live"
 tagline: "My studio's brand site — fast, accessible, and conversion-focused."
 summary: "A Next.js 15 / React 19 marketing site I designed and built end to end: cinematic motion, a productized pricing system, integrated booking, and strong Lighthouse scores (100 SEO and 100 Best Practices on mobile)."
 tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"]
+cover: "../../assets/kellybuilt-live2.png"
 links: { live: "https://kellybuilt.dev" }
 ---
 

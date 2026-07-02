@@ -1,0 +1,83 @@
+---
+const email = "ctkelly1277@gmail.com";
+const githubUrl = "https://github.com/CTK1215";
+// TODO(Chris): confirm your LinkedIn handle — update the slug below if different.
+const linkedinUrl = "https://www.linkedin.com/in/christopher-kelly-dev";
+const resumeUrl = "/resume.pdf";
+
+const links: { label: string; value: string; href: string; external: boolean }[] = [
+  { label: "Email", value: email, href: `mailto:${email}`, external: false },
+  { label: "GitHub", value: "github.com/CTK1215", href: githubUrl, external: true },
+  { label: "LinkedIn", value: "Connect on LinkedIn", href: linkedinUrl, external: true },
+];
+---
+
+<section
+  id="contact"
+  aria-labelledby="contact-heading"
+  class="py-20 sm:py-24 lg:py-28"
+>
+  <div
+    class="rounded-2xl border border-border bg-surface p-8 sm:p-10 lg:p-14"
+  >
+    <div class="max-w-2xl">
+      <h2
+        id="contact-heading"
+        class="text-3xl font-semibold tracking-tight text-text sm:text-4xl"
+      >
+        Let's build something.
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-text-muted sm:text-lg">
+        I'm looking for an entry-level software developer role where I can keep
+        shipping software people rely on. If you're hiring &mdash; or just want
+        to talk shop &mdash; I'd love to hear from you.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+        <a
+          href={`mailto:${email}`}
+          class="focus-ring inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-colors duration-150 hover:bg-accent-hover sm:text-base"
+        >
+          Email me
+        </a>
+        <a
+          href={resumeUrl}
+          download
+          class="focus-ring inline-flex items-center justify-center rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-text transition-colors duration-150 hover:border-text-muted hover:bg-bg sm:text-base"
+        >
+          Download resume
+        </a>
+      </div>
+
+      <dl class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {
+          links.map((link) => (
+            <div>
+              <dt class="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+                {link.label}
+              </dt>
+              <dd class="mt-1.5">
+                <a
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  class="focus-ring rounded-sm text-base text-text transition-colors duration-150 hover:text-accent"
+                >
+                  {link.value}
+                  {link.external && <span aria-hidden="true"> ↗</span>}
+                </a>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+</style>

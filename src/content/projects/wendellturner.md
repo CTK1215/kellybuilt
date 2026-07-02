@@ -7,6 +7,7 @@ statusKind: "live"
 tagline: "A 188-page real-estate site with live MLS listings, AI tools, and an automated lead pipeline."
 summary: "A Next.js site for a Coachella Valley broker: 188 SEO landing pages, live IDX/MLS integration, AI listing-description and valuation tools with fair-housing guardrails, and an IDX→HubSpot lead pipeline running on a Vercel cron."
 tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "HubSpot API", "Claude API"]
+cover: "../../assets/wendellturner-live2.png"
 links: { live: "https://wendellturner.com" }
 ---
 

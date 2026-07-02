@@ -7,6 +7,7 @@ statusKind: "in-progress"
 tagline: "The commercial rebuild — a multi-tenant .NET 8 + Azure platform for home-health field work."
 summary: "NurseTrack re-architected as a sellable product: an ASP.NET Core API on Azure with a multi-tenant ownership model, a pay-calculation engine, server-side route optimization, audit logging, and a type-safe React Native client. Built for HIPAA compliance from the ground up."
 tech: ["C#", ".NET 8", "EF Core", "Azure", "MySQL", "React Native"]
+cover: "../../assets/servesync-cover.png"
 links: {}
 ---
 

@@ -7,6 +7,7 @@ statusKind: "production"
 tagline: "Scheduling and route optimization for a home-health field nurse — running in production every day."
 summary: "A React Native field app and React admin dashboard that plan a nurse's day, optimize driving routes, auto-track mileage, and use AI to read wound photos and intake documents. Built to solve a real problem at the home-health agency where I work — and in daily use now."
 tech: ["React Native", "Expo", "React", "TypeScript", "Firebase", "Google Maps Platform"]
+cover: "../../assets/nursetrack-cover.png"
 links: {}
 ---
 

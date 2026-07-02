@@ -1,0 +1,70 @@
+---
+const facts: { label: string; value: string }[] = [
+  { label: "Currently", value: "Software Engineering, True Coders bootcamp" },
+  { label: "Focus", value: "C# / .NET · full-stack web & mobile" },
+  { label: "Education", value: "B.S. Information Technology" },
+  { label: "Proof", value: "An app in daily production use" },
+];
+---
+
+<section
+  id="about"
+  aria-labelledby="about-heading"
+  class="py-20 sm:py-24 lg:py-28"
+>
+  <header class="mb-12 sm:mb-14">
+    <h2
+      id="about-heading"
+      class="text-3xl font-semibold tracking-tight text-text sm:text-4xl"
+    >
+      About
+    </h2>
+    <p class="mt-3 text-base text-text-muted sm:text-lg">
+      How I got here — and why it makes me a better engineer.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-14">
+    <div class="max-w-2xl space-y-5 text-base leading-relaxed text-text-muted sm:text-lg">
+      <p>
+        I came to software the practical way: by building something that had
+        to work. Working in home health &mdash; handling scheduling, billing,
+        and mileage tracking &mdash; I watched a field nurse lose hours every
+        day to logistics. So I built <span class="text-text">NurseTrack</span>
+        to fix it. It has run in production every single day since, planning a
+        real nurse's schedule and routes in the field.
+      </p>
+      <p>
+        That project turned a job into a calling. I'm now formalizing the
+        self-taught foundation through the
+        <span class="text-text">True Coders</span> software engineering
+        bootcamp, going deeper on C# and .NET, and re-architecting NurseTrack
+        into <span class="text-text">ServeSync</span> &mdash; a multi-tenant
+        commercial platform on ASP.NET Core and Azure.
+      </p>
+      <p>
+        The career switch isn't a gap to explain away &mdash; it's the reason I
+        build the way I do. Years of solving real operational problems taught
+        me to start from the user and the outcome, ship things that hold up
+        under daily use, and sweat the details that make software actually
+        dependable. I'd rather build one tool people rely on than ten demos
+        that never leave localhost.
+      </p>
+    </div>
+
+    <div class="lg:pt-1">
+      <dl class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border">
+        {
+          facts.map((fact) => (
+            <div class="bg-surface p-5">
+              <dt class="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+                {fact.label}
+              </dt>
+              <dd class="mt-1.5 text-base text-text">{fact.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>
