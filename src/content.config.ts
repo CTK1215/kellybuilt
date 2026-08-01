@@ -10,7 +10,7 @@ const projects = defineCollection({
       order: z.number(),
       featured: z.boolean().default(false),
       status: z.string(),
-      statusKind: z.enum(['production', 'in-progress', 'live']).default('live'),
+      statusKind: z.enum(['production', 'in-progress', 'live', 'archived']).default('live'),
       tagline: z.string(),
       summary: z.string(),
       tech: z.array(z.string()),
